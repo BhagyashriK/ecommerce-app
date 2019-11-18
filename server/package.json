@@ -1,0 +1,13 @@
+{
+  "name": "procedure-scheduling-server",
+  "version": "1.0.0",
+  "description": "mocked data sever for procedure sheduling application",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "json-server --watch db.json"
+  },
+  "dependencies": {
+    "json-server": "^0.15.1"
+  }
+}
