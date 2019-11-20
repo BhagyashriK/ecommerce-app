@@ -27,7 +27,7 @@ Note: `yarn start` to run application on client side
 - Using json-server to create fake REST API to return mocked data for product, brand and product type list
 - Fetched brand and product type only once as list is static however we can re-fetch them if backend filters these lists on product name change
 - Kept application theme resembling to flaconi website in order to ensure smooth transition to product details page on click of 'View details'
-- Due to json-server restriction search by product name is strict search which will obey exact product name.
+- Due to json-server restriction 'search by product name' is strict search which will obey exact product name.
 
 ## Available Utilities
 
