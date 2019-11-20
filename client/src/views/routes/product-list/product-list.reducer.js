@@ -2,6 +2,8 @@ import * as types from "./product-list.types";
 
 export const initialState = {
   list: [],
+  productTypes: [],
+  brands: [],
   isLoading: true,
   errorMessage: null
 };
@@ -15,6 +17,22 @@ export function productsReducer(state = initialState, action) {
         isLoading: false,
         list: action.payload,
         errorMessage: null
+      });
+    case types.TYPES.SUCCESS:
+      return Object.assign({}, state, {
+        productTypes: action.payload
+      });
+    case types.BRANDS.SUCCESS:
+      return Object.assign({}, state, {
+        brands: action.payload
+      });
+    case types.TYPES.FAILURE:
+      return Object.assign({}, state, {
+        productTypes: []
+      });
+    case types.BRANDS.FAILURE:
+      return Object.assign({}, state, {
+        brands: []
       });
     case types.PRODUCTS.FAILURE:
       return Object.assign({}, state, {

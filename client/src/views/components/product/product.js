@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 import {
   Thumbnail,
   ThumbnailHeader,
@@ -16,12 +17,16 @@ const Product = ({ name, image, price, size, rating, brand, slug, type }) => {
   const goToDetails = () => {
     window.location = `https://www.flaconi.de/${slug}`;
   };
+
+  // Calculate rating out of 5 and fix it to 2 decimals
+  const ratingOutOf5 = ((rating * 5) / 100).toFixed(2);
+
   return (
     <Thumbnail data-testid="product-wrapper">
       <ThumbnailHeader>
-        {/* Product tag */}
+        {/* Product rating */}
         <TagWrapper>
-          <Bullet className="bullet">{(rating * 5) / 100} &#9733;</Bullet>
+          <Bullet className="bullet">{ratingOutOf5} &#9733;</Bullet>
         </TagWrapper>
         {/* Product image */}
         <ImgWrapper>
@@ -30,6 +35,7 @@ const Product = ({ name, image, price, size, rating, brand, slug, type }) => {
         {/* Product name */}
         <ThumbnailTitle>{name}</ThumbnailTitle>
       </ThumbnailHeader>
+      {/* Remaining product information such as price, size, brand and type */}
       <ThumbnailContent>
         <InfoList>
           <li>
@@ -50,6 +56,7 @@ const Product = ({ name, image, price, size, rating, brand, slug, type }) => {
           </li>
         </InfoList>
       </ThumbnailContent>
+      {/* Link to redirect user to external flaconi product details page. */}
       <ThumbnailFooter>
         <LinkButton onClick={goToDetails}>View Details</LinkButton>
       </ThumbnailFooter>
@@ -58,7 +65,14 @@ const Product = ({ name, image, price, size, rating, brand, slug, type }) => {
 };
 
 Product.propTypes = {
-  info: PropTypes.object
+  name: PropTypes.string,
+  image: PropTypes.string,
+  price: PropTypes.number,
+  size: PropTypes.string,
+  rating: PropTypes.number,
+  brand: PropTypes.string,
+  slug: PropTypes.string,
+  type: PropTypes.string
 };
 
 export default Product;

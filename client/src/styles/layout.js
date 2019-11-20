@@ -29,6 +29,8 @@ export const Row = styled.div`
   flex-wrap: wrap;
   margin-left: 0;
   margin-right: 0;
+
+  /* Medium devices (tablets, 768px and up) */
   @media (min-width: 768px) {
     margin-left: -15px;
     margin-right: -15px;
@@ -49,7 +51,7 @@ export const Col4 = styled.div`
   max-width: 100%;
   padding-left: 15px;
   padding-right: 15px;
-
+  /* Medium devices (tablets, 768px and up) */
   @media (min-width: 768px) {
     flex: 0 0 50%;
     max-width: 50%;

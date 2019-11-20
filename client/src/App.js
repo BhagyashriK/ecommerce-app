@@ -3,7 +3,6 @@ import { Switch, Route } from "react-router-dom";
 
 import { GlobalStyles } from "./styles/normalize";
 import Message from "./views/components/message/message.index";
-
 import ProductList from "./views/routes/product-list/product-list.index";
 
 const App = props => {
@@ -13,7 +12,7 @@ const App = props => {
       <GlobalStyles></GlobalStyles>
       {/* Configure routes for application     */}
       <Switch>
-        <Route exact path="/products" component={ProductList} />
+        <Route exact path="/" component={ProductList} />
         {/* If route is not matching render 404 page */}
         <Route
           render={() => (

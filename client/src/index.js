@@ -7,11 +7,18 @@ import { ThemeProvider } from "styled-components";
 import theme from "./styles/theme";
 
 import App from "./App";
-import * as serviceWorker from "./serviceWorker";
 import ErrorBoundary from "./views/components/error-boundary/erro-boundary.index";
+
+import * as serviceWorker from "./serviceWorker";
 import configureStore from "./store/configureStore";
 
 const store = configureStore();
+
+/***
+ * theme: common theme
+ * store: redux store
+ * ErrorBoundary: handled dom curruption issues
+ */
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>

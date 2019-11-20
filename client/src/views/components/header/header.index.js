@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import { Wrapper } from "./header.style";
 
 /**
@@ -11,6 +13,10 @@ const Header = ({ children }) => {
       <div>{children}</div>
     </Wrapper>
   );
+};
+
+Header.propTypes = {
+  children: PropTypes.node
 };
 
 export default Header;

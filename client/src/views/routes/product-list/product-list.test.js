@@ -10,26 +10,20 @@ import "@testing-library/jest-dom/extend-expect";
 import getMockedState from "../../../mocks/state-mock";
 import thunk from "../../../mocks/thunk-mock";
 
-import PatientList from "./product-list.index";
-import { patientsReducer } from "./product-list.reducer";
+import ProductList from "./product-list.index";
+import { productsReducer } from "./product-list.reducer";
 
 afterEach(cleanup);
 
 const mockedState = getMockedState();
 
-interface Store {
-  initialState?: object;
-  store?: any;
-  history?: any;
-}
-
 function renderWithRedux(
-  ui: any,
+  ui,
   {
     initialState,
-    store = createStore(patientsReducer, initialState, applyMiddleware(thunk)),
+    store = createStore(productsReducer, initialState, applyMiddleware(thunk)),
     history = createMemoryHistory({ initialEntries: ["/"] })
-  }: Store = {}
+  } = {}
 ) {
   return {
     ...render(
@@ -41,31 +35,31 @@ function renderWithRedux(
   };
 }
 
-test("Should render patient list", () => {
-  const { getByTestId } = renderWithRedux(<PatientList />, {
+test("Should render product list", () => {
+  const { getByTestId } = renderWithRedux(<ProductList />, {
     initialState: mockedState
   });
-  const patientList = getByTestId("patient-list");
-  expect(patientList.children.length).toBe(3);
+  const productList = getByTestId("product-list");
+  expect(productList.children.length).toBe(5);
 });
 
-test("Should show 'No Content' message if patient list is empty", () => {
-  mockedState.patients.list = [];
+test("Should show 'No Content' message if product list is empty", () => {
+  mockedState.products.list = [];
 
-  const { getByText, getByTestId } = renderWithRedux(<PatientList />, {
+  const { getByText, getByTestId } = renderWithRedux(<ProductList />, {
     initialState: mockedState
   });
-  const patientListWrapper = getByTestId("patient-list-wrapper");
+  const productListWrapper = getByTestId("product-list-wrapper");
   const emptyMsg = getByText("No Content");
-  expect(patientListWrapper).toContainElement(emptyMsg);
+  expect(productListWrapper).toContainElement(emptyMsg);
 });
 
 test("Should show Loader if is request is in progress", () => {
-  mockedState.patients.isLoading = true;
-  const { getByText, getByTestId } = renderWithRedux(<PatientList />, {
+  mockedState.products.isLoading = true;
+  const { getByText, getByTestId } = renderWithRedux(<ProductList />, {
     initialState: mockedState
   });
-  const patientListWrapper = getByTestId("patient-list-wrapper");
+  const productListWrapper = getByTestId("product-list-wrapper");
   const loader = getByText("Loading...");
-  expect(patientListWrapper).toContainElement(loader);
+  expect(productListWrapper).toContainElement(loader);
 });

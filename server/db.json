@@ -358,5 +358,23 @@
       "size": "30ML",
       "rating": 99
     }
-  ]
+  ],
+  "brands": [
+    "Lancôme",
+    "Jean Paul Gaultier",
+    "Paco Rabanne",
+    "Hugo Boss",
+    "Giorgio Armani",
+    "Yves Saint Laurent",
+    "Chloé",
+    "Dior",
+    "Guerlain",
+    "Narciso Rodriguez",
+    "Issey Miyake",
+    "Dolce & Gabbana",
+    "Lacoste",
+    "Viktor & Rolf",
+    "Emporio Armani"
+  ],
+  "types": ["Eau de Parfum", "Eau de Toilette", "Parfum"]
 }

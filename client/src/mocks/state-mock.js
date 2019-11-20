@@ -1,43 +1,93 @@
 /**
- * mocked redux state
+ * mocked redux state for product list
  */
 
 const getMockedState = () => ({
-  patients: {
+  products: {
     list: [
       {
-        id: 1,
-        name: "Sonali Kulkarni",
-        drName: "Jayant Indurkar",
-        gender: "Female",
-        dateOfBirth: 655547400000,
-        description:
-          "Occurance of cyst located near the tailbone. There is pain, reddened skin or drainage of pus and blood. reatment involves drainage and surgical removal of the cyst.adsasd",
-        status: "PLANNED",
-        plannedOn: "2019-11-21T10:30:00.000Z",
-        endOn: "2019-11-21T12:30:00.000Z",
-        room: "1009"
+        id: "30150001",
+        name: "Lancôme La vie est belle Eau de Parfum",
+        slug:
+          "parfum/lancome/la-vie-est-belle/lancome-la-vie-est-belle-eau-de-parfum.html",
+        brand: "Lancôme",
+        type: "Eau de Parfum",
+        image:
+          "https://cdn.flaconi.de/media/catalog/215x/l/a/lancome-la-vie-est-belle-eau-de-parfum-30-ml.jpg",
+        price: 3895,
+        size: "30ML",
+        rating: 99
       },
       {
-        name: "Laxmikant Berde",
-        gender: "male",
-        drName: "Kalyan Joshi",
-        room: "1102",
-        dateOfBirth: 88453800000,
-        id: 2,
-        status: "PLANNED",
-        plannedOn: "2019-11-11T00:30:00.000Z",
-        endOn: "2019-11-11T01:00:00.000Z",
-        description: "ftgyhujikolp;"
+        id: "30103318",
+        name: "Jean Paul Gaultier Le Male Eau de Toilette",
+        slug:
+          "parfum/jean-paul-gaultier/le-male/jean-paul-gaultier-le-male-eau-de-toilette.html",
+        brand: "Jean Paul Gaultier",
+        type: "Eau de Toilette",
+        image:
+          "https://cdn.flaconi.de/media/catalog/215x/j/e/jean-paul-gaultier-le-male-eau-de-toilette-125-ml-3423470317534.jpg",
+        price: 3395,
+        size: "40ML",
+        rating: 99
       },
       {
-        name: "dgsfhjkvcl",
-        gender: "other",
-        drName: "Jayant Indurkar",
-        room: "1102",
-        dateOfBirth: 1573410600000,
-        id: 3
+        id: "80020578-C",
+        name: "Jean Paul Gaultier Scandal Eau de Parfum",
+        slug:
+          "parfum/jean-paul-gaultier/scandal/jean-paul-gaultier-scandal-eau-de-parfum.html",
+        brand: "Jean Paul Gaultier",
+        type: "Eau de Parfum",
+        image:
+          "https://cdn.flaconi.de/media/catalog/215x/j/e/jean-paul-gaultier-scandal-eau-de-parfum-80-ml-8435415006408.jpg",
+        price: 3895,
+        size: "30ML",
+        rating: 96
+      },
+      {
+        id: "30103519",
+        name: "Paco Rabanne 1 Million Eau de Toilette",
+        slug:
+          "parfum/paco-rabanne/1-million/paco-rabanne-1-million-eau-de-toilette.html",
+        brand: "Paco Rabanne",
+        type: "Eau de Toilette",
+        image:
+          "https://cdn.flaconi.de/media/catalog/215x/p/a/paco-rabanne-one-million-eau-de-toilette-100-ml-3349666007921.jpg",
+        price: 4295,
+        size: "50ML",
+        rating: 99
+      },
+      {
+        id: "30102718",
+        name: "Hugo Boss Boss Bottled Eau de Toilette",
+        slug:
+          "parfum/hugo-boss/boss-bottled/hugo-boss-boss-bottled-eau-de-toilette.html",
+        brand: "Hugo Boss",
+        type: "Eau de Toilette",
+        image:
+          "https://cdn.flaconi.de/media/catalog/215x/h/u/hugo-boss-boss-bottled-eau-de-toilette-50-ml-737052351018.jpg",
+        price: 3795,
+        size: "50ML",
+        rating: 99
       }
+    ],
+    productTypes: ["Eau de Parfum", "Eau de Toilette", "Parfum"],
+    brands: [
+      "Lancôme",
+      "Jean Paul Gaultier",
+      "Paco Rabanne",
+      "Hugo Boss",
+      "Giorgio Armani",
+      "Yves Saint Laurent",
+      "Chloé",
+      "Dior",
+      "Guerlain",
+      "Narciso Rodriguez",
+      "Issey Miyake",
+      "Dolce & Gabbana",
+      "Lacoste",
+      "Viktor & Rolf",
+      "Emporio Armani"
     ],
     isLoading: false,
     errorMessage: null
